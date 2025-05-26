@@ -8,10 +8,17 @@ def t(en, zh):
     return zh if lang == "中文" else en
 
 st.title(t("TD + AVI Map Merger", "TD + AVI 缺陷地圖合併工具"))
+
+# 功能說明
 st.markdown(t(
-    "Upload TD map and AVI map (both in Excel format with row index in the first column).",
-    "請上傳 TD map 與 AVI map（Excel 格式，第一欄為 row index）。"
+    "**This tool analyzes the relationship between AVI defect distribution and Touch Down (TD) order.** "
+    "Before running the program, please make sure the probing map and AVI defect map are both aligned to the same origin (top-left corner).",
+
+    "**本工具用於分析 AVI 缺陷分布與 Touch Down（TD）順序之間的關係。** "
+    "執行程式前，請先確認 Probing Map 與 AVI Map 的零點座標均已對齊至左上角。"
 ))
+
+st.markdown("---")
 
 td_file = st.file_uploader(t("Upload TD map", "上傳 TD map"), type=["xlsx"])
 avi_file = st.file_uploader(t("Upload AVI map", "上傳 AVI map"), type=["xlsx"])
