@@ -82,13 +82,13 @@ if td_file and avi_file:
         st.dataframe(td_summary_sorted)
 
         # 圖表視覺化
-fig, ax = plt.subplots(figsize=(14, 4))
-ax.bar(td_summary_sorted["TD"].astype(str), td_summary_sorted["Defect Qty"], color="skyblue")
-ax.set_title(t("Defect Quantity by TD", "各 TD 缺陷數量"))
-ax.set_xlabel("TD")
-ax.set_ylabel(t("Defect Qty", "缺陷數量"))
-plt.xticks(rotation=90, fontsize=8)
-st.pyplot(fig)
+        fig, ax = plt.subplots(figsize=(14, 4))
+        ax.bar(td_summary_sorted["TD"].astype(str), td_summary_sorted["Defect Qty"], color="skyblue")
+        ax.set_title(t("Defect Quantity by TD", "各 TD 缺陷數量"))
+        ax.set_xlabel("TD")
+        ax.set_ylabel(t("Defect Qty", "缺陷數量"))
+        plt.xticks(rotation=90, fontsize=8)
+        st.pyplot(fig)
 
     except Exception as e:
         st.error(t(f"An error occurred: {e}", f"處理過程發生錯誤：{e}"))
